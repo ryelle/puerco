@@ -1,0 +1,30 @@
+
+.home .hentry {
+	position: relative;
+	display: table;
+	height: 80vh;
+	min-height: 300px;
+	max-height: 800px;
+	background: transparent no-repeat center;
+	background-size: cover;
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background-image: radial-gradient( fade-out( black, 0.90 ), fade-out( black, 0.15 ) );
+	}
+}
+
+.home .entry-content {
+	display: table-cell;
+	position: relative;
+	z-index: 10;
+	vertical-align: bottom;
+	padding: 65px 80px;
+	@include font-size( 2.4 );
+}
