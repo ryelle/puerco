@@ -9,6 +9,15 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	word-wrap: break-word;
+}
+
 @import "headings";
 
 @import "copy";
