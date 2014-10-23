@@ -1,5 +1,11 @@
+
+.widget-area {
+	border-top: 1px solid $color__text-main;
+}
+
 .widget {
 	margin: 0 0 1.5em;
+	color: $color__text-widget;
 
 	/* Make sure select elements fit in widgets */
 	select {

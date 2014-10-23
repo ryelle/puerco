@@ -17,6 +17,7 @@ h3 {
 h4 {
 	font-family: $font__main;
 	@include font-size( 1.8 );
+	font-weight: 700;
 }
 
 .site-title {
@@ -53,4 +54,11 @@ h4 {
 	@include font-size( 3.0 );
 	font-style: italic;
 	text-align: center;
+}
+
+.widget-title {
+	font-family: $font__main;
+	@include font-size( 1.8 );
+	font-weight: 700;
+	color: $color__text-widget-title;
 }
