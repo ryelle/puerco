@@ -19,4 +19,37 @@ h4 {
 	@include font-size( 1.8 );
 }
 
+.site-title {
+	position: relative;
+	margin-bottom: $size__spacing - 10;
+	padding-bottom: $size__spacing;
+	text-align: center;
+	border-bottom: 1px solid $color__text-main;
 
+	a, a:visited {
+		color: $color__text-main;
+		text-decoration: none;
+	}
+
+	&:after {
+		position: absolute;
+		overflow: hidden;
+		left: calc( 50% - 30px ); // 60px wide total
+		bottom: -15px;
+		padding: 0 15px;
+		content: '\2666';
+		line-height: 1;
+		height: 42px;
+		background-color: $color__background-body;
+	}
+}
+
+.site-description {
+	margin: 0 0 $size__spacing - 10;
+	padding-bottom: $size__spacing - 10;
+	border-bottom: 1px solid $color__text-main;
+	font-family: $font__header;
+	@include font-size( 3.0 );
+	font-style: italic;
+	text-align: center;
+}
