@@ -2,6 +2,8 @@ $color__background-body: #27262c;
 $color__background-hr: #fff;
 $color__background-input: #2d2b34;
 $color__background-button: transparent;
+$color__background-button-hover: white;
+$color__background-button-active: red;
 
 $color__background-pre: #5d5c61;
 $color__background-ins: #5d5c4e;
@@ -11,13 +13,14 @@ $color__text-widget: #dddae5;
 $color__text-widget-title: #e0dbec;
 $color__text-input: #585566;
 $color__text-input-focus: #585566;
+$color__text-button: #fff;
+$color__text-button-hover: #27262c;
+$color__text-button-active: #27262c;
 
 $color__link: #beb4db;
 $color__link-hover: darken( #beb4db, 15% );
 
 $color__border-button: #fff;
-$color__border-button-hover: #fff;
-$color__border-button-focus: #fff;
 $color__border-input: #212026;
 $color__border-abbr: #beb4db;
 
