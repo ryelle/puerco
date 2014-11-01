@@ -26,5 +26,3 @@ if ( has_post_thumbnail() ){
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
-
-<?php edit_post_link( __( 'Edit', 'puerco' ), '<span class="edit-link">', '</span>' ); ?>
