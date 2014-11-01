@@ -100,7 +100,7 @@ function puerco_continue_reading_link() {
 		the_title( '<span class="screen-reader-text">"', '"</span>', false )
 	);
 
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . $link_text . '</a>';
+	return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . $link_text . '</a>';
 }
 
 /**
