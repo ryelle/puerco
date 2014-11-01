@@ -10,13 +10,19 @@
  *
  * @package Puerco
  */
-
+$blog = get_option( 'page_for_posts' );
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
+
+			<?php if ( is_home() && $blog ): ?>
+			<header class="page-header">
+				<h1 class="page-title"><?php echo get_the_title( $blog ); ?></h1>
+			</header>
+			<?php endif; ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
