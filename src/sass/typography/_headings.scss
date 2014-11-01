@@ -56,6 +56,15 @@ h4 {
 	text-align: center;
 }
 
+.page-title {
+	margin-bottom: $size__spacing;
+}
+
+.entry-title {
+	margin-bottom: 10px;
+	@include font-size( 2.4 );
+}
+
 .widget-title {
 	font-family: $font__main;
 	@include font-size( 1.8 );
