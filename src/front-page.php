@@ -17,7 +17,11 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'front' ); ?>
+				<?php if ( is_singular() ) : ?>
+					<?php get_template_part( 'content', 'front' ); ?>
+				<?php else: ?>
+					<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php endif; ?>
 
 			<?php endwhile; // end of the loop. ?>
 
