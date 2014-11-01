@@ -128,7 +128,11 @@ function puerco_custom_excerpt_more( $output ) {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-	$date = '<span class="posted-on">' . $time_string . '</span>';
-	return $date . $output . puerco_continue_reading_link();
+	$prefix = '<span class="posted-on">' . $time_string . '</span>';
+
+	if ( empty( $output ) ){
+		$prefix .= ' &hellip;';
+	}
+	return $prefix . $output . puerco_continue_reading_link();
 }
 add_filter( 'the_excerpt', 'puerco_custom_excerpt_more', 1 );
