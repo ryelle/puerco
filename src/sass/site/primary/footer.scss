@@ -1,0 +1,21 @@
+
+.site-footer {
+	margin-bottom: $size__spacing;
+	text-align: center;
+	color: $color__text-footer;
+	font-style: italic;
+
+	.sep {
+		font-style: normal;
+	}
+
+	a {
+		color: $color__text-footer;
+		text-decoration: none;
+	}
+
+	a:hover, a:focus {
+		outline: none;
+		text-decoration: underline;
+	}
+}
