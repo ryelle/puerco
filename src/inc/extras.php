@@ -87,3 +87,42 @@ function puerco_setup_author() {
 	}
 }
 add_action( 'wp', 'puerco_setup_author' );
+
+/**
+ * Return a "Read More" link for excerpts
+ *
+ * @return string The "Read More" HTML link, with a screen-reader'd post title.
+ */
+function puerco_continue_reading_link() {
+	/* translators: %s: Name of current post */
+	$link_text = sprintf(
+		__( 'Read more %s', 'puerco' ),
+		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	);
+
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . $link_text . '</a>';
+}
+
+/**
+ * Replace the "[...]" after generated excerpts with an ellipsis.
+ *
+ * The "[...]" is appended to automatically generated excerpts.
+ *
+ * @param string $more The Read More text.
+ * @return The filtered Read More text.
+ */
+function puerco_auto_excerpt_more( $more ) {
+	return ' &hellip; ';
+}
+add_filter( 'excerpt_more', 'puerco_auto_excerpt_more' );
+
+/**
+ * Add a pretty "Read More" link to post excerpts.
+ *
+ * @param   string  $output The post excerpt.
+ * @return  string  The post excerpt with a "Read More" link.
+ */
+function puerco_custom_excerpt_more( $output ) {
+	return $output . puerco_continue_reading_link();
+}
+add_filter( 'the_excerpt', 'puerco_custom_excerpt_more', 1 );
