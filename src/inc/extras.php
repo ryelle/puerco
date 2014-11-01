@@ -123,6 +123,12 @@ add_filter( 'excerpt_more', 'puerco_auto_excerpt_more' );
  * @return  string  The post excerpt with a "Read More" link.
  */
 function puerco_custom_excerpt_more( $output ) {
-	return $output . puerco_continue_reading_link();
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>, ';
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+	$date = '<span class="posted-on">' . $time_string . '</span>';
+	return $date . $output . puerco_continue_reading_link();
 }
 add_filter( 'the_excerpt', 'puerco_custom_excerpt_more', 1 );
