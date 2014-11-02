@@ -1,7 +1,7 @@
 .clear:before,
 .clear:after,
-.entry-content:before,
-.entry-content:after,
+.hentry:before,
+.hentry:after,
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
@@ -14,7 +14,7 @@
 }
 
 .clear:after,
-.entry-content:after,
+.hentry:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,

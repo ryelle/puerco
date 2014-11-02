@@ -1,4 +1,23 @@
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+
+.single {
+	.entry-title {
+		@include font-size( 3.6 );
+	}
+
+	.entry-container {
+		float: right;
+		margin: 0 0 0 -30%;
+		width: 100%;
+	}
+
+	.entry-content {
+		margin: 0 0 0 30%;
+	}
+
+	.entry-meta {
+		float: left;
+		overflow: hidden;
+		width: 30%;
+	}
+
 }
