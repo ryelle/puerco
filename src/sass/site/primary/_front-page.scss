@@ -26,7 +26,7 @@
 			right: 0;
 			bottom: 0;
 			z-index: 1;
-			background-image: radial-gradient( fade-out( black, 0.90 ), fade-out( black, 0.15 ) );
+			background-image: linear-gradient( rgba( black, 0 ), rgba( black, 0.75 ) );
 		}
 
 		.entry-content {
