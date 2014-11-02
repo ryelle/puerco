@@ -72,3 +72,9 @@ h4 {
 	font-weight: 700;
 	color: $color__text-widget-title;
 }
+
+.comments-title,
+.comment-reply-title {
+	margin-bottom: $size__spacing;
+	@include font-size( 3.6 );
+}
