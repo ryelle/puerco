@@ -68,7 +68,7 @@ if ( ! function_exists( 'puerco_posted_on' ) ) :
 function puerco_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <time class="updated" datetime="%3$s">(%4$s)</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -79,16 +79,16 @@ function puerco_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'puerco' ),
+		_x( 'Published %s', 'post date', 'puerco' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'puerco' ),
+		_x( 'By %s', 'post author', 'puerco' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<div class="posted-on meta-item">' . $posted_on . '</div><div class="byline meta-item"> ' . $byline . '</div>';
 
 }
 endif;
@@ -100,26 +100,46 @@ if ( ! function_exists( 'puerco_entry_footer' ) ) :
 function puerco_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
+		$full_list = '';
+
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'puerco' ) );
-		if ( $categories_list && puerco_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'puerco' ) . '</span>', $categories_list );
-		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'puerco' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'puerco' ) . '</span>', $tags_list );
+
+		if ( $categories_list && puerco_categorized_blog() ) {
+			if ( $tags_list ) {
+				$tags_list .= __( ', ', 'puerco' );
+			}
+			$full_list = $tags_list . $categories_list;
 		}
+
+		if ( $full_list ) {
+			printf(
+				'<div class="tax-links meta-item">' . __( 'Tags and Categories %1$s', 'puerco' ) . '</div>',
+				'<br />' . $full_list
+			);
+		}
+
+		if ( has_post_format() ) {
+			$format = sprintf( '<a href="%1$s">%2$s</a>', get_post_format_link( get_post_format() ), get_post_format_string( get_post_format() ) );
+		} else {
+			$format = sprintf( '<span>%s</span>', get_post_format_string( false ) );
+		}
+		printf(
+			'<div class="format-link meta-item">' . __( 'Format %1$s', 'puerco' ) . '</div>',
+			'<br />' . $format
+		);
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo '<div class="comments-link meta-item">';
 		comments_popup_link( __( 'Leave a comment', 'puerco' ), __( '1 Comment', 'puerco' ), __( '% Comments', 'puerco' ) );
-		echo '</span>';
+		echo '</div>';
 	}
 
-	edit_post_link( __( 'Edit', 'puerco' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'puerco' ), '<div class="edit-link meta-item">', '</div>' );
 }
 endif;
 

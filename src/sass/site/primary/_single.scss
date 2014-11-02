@@ -1,23 +1,59 @@
 
 .single {
+	.hentry {
+		margin-bottom: $size__spacing;
+		padding-bottom: $size__spacing * 1.5;
+		border-bottom: 1px solid $color__text-main;
+	}
+
 	.entry-title {
+		margin-bottom: $size__spacing-small;
 		@include font-size( 3.6 );
+	}
+
+	.entry-image {
+		margin-bottom: $size__spacing-small;
 	}
 
 	.entry-container {
 		float: right;
-		margin: 0 0 0 -30%;
+		margin: 0 0 0 -34.5%;
 		width: 100%;
 	}
 
 	.entry-content {
-		margin: 0 0 0 30%;
+		margin: 0 0 0 34.5%;
 	}
 
 	.entry-meta {
 		float: left;
 		overflow: hidden;
-		width: 30%;
+		width: 34.5%;
+		padding-right: 35px;
 	}
 
+	.updated:not(.published) {
+		font-style: italic;
+	}
 }
+
+.meta-item {
+	margin-bottom: $size__spacing-small;
+	font-weight: bold;
+
+	a {
+		color: white;
+		text-decoration: none;
+		font-weight: normal;
+
+		&:hover, &:active, &:focus {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+
+	&.format-link span {
+		font-weight: normal;
+	}
+}
+
