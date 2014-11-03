@@ -10,12 +10,7 @@
 	}
 
 	a {
+		@include white-link;
 		color: $color__text-footer;
-		text-decoration: none;
-	}
-
-	a:hover, a:focus {
-		outline: none;
-		text-decoration: underline;
 	}
 }

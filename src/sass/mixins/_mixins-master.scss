@@ -34,3 +34,14 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Shortcut for a white link w/o underline (until interaction)
+@mixin white-link(){
+	color: white;
+	text-decoration: none;
+
+	&:hover, &:active, &:focus {
+		color: white;
+		text-decoration: underline;
+	}
+}

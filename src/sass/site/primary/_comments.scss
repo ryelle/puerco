@@ -1,6 +1,138 @@
-.comment-content a {
-	word-wrap: break-word;
+
+.bypostauthor {/* @todo */}
+
+.comment-list,
+.children {
+	list-style: none;
+	margin: 0;
 }
-.bypostauthor {
-	display: block;
+
+article.comment-body {
+	position: relative;
+	margin-bottom: 40px;
+	min-height: 64px;
+}
+
+.comment-content {
+	margin: 0 0 0 34.5%;
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.comment-meta {
+	float: left;
+	overflow: hidden;
+	width: 34.5%;
+	padding-right: 35px;
+}
+
+.avatar {
+	float: left;
+	margin-right: 20px;
+}
+
+.comment-author {
+	a {
+		@include white-link;
+	}
+
+	.says {
+		display: none;
+	}
+}
+
+.comment-metadata {
+	@include font-size( 1.4 );
+	line-height: 1;
+
+	a {
+		@include white-link;
+	}
+}
+
+.edit-link {
+	display: none;
+}
+
+.reply {
+	position: absolute;
+	bottom: 0;
+	left: 84px;
+	@include font-size( 1.4 );
+	line-height: 1;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.depth-2 {
+	.comment-meta,
+	.comment-respond {
+		padding-left: 40px;
+	}
+
+	.reply {
+		left: 124px;
+	}
+}
+
+.depth-3 .comment-meta {
+	padding-left: 80px;
+}
+
+
+/*--------------------------------------------------------------
+  Comment Reply Form
+--------------------------------------------------------------*/
+
+.comment-respond {
+	margin-bottom: $size__spacing;
+}
+
+.field-container {
+	float: left;
+	margin: 0 -69% 0 0;
+
+	label,
+	input {
+		display: block;
+		width: 100%;
+	}
+}
+
+.comment-form-comment {
+	float: right;
+	overflow: hidden;
+	padding-left: 35px;
+	width: 69%;
+
+	textarea {
+		height: 298px;
+	}
+
+	label {
+		display: block;
+	}
+
+	.logged-in & {
+		padding-left: 0;
+		width: 100%;
+	}
+}
+
+.comment-notes,
+.form-allowed-tags,
+.form-submit {
+	clear: both;
+}
+
+.form-submit {
+	text-align: right;
+
+	input {
+		padding: 15px 40px 10px;
+	}
 }

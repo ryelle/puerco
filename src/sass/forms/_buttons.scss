@@ -26,6 +26,7 @@ a.puerco-button {
 
 	&:focus,
 	&:hover {
+		outline-color: $color__border-input;
 		color: $color__text-button-hover;
 		background-color: $color__background-button-hover;
 	}

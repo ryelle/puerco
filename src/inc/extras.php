@@ -30,6 +30,9 @@ function puerco_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+	if ( ! comments_open() && ! get_comments_number() ) {
+		$classes[] = 'comments-closed';
+	}
 
 	return $classes;
 }
@@ -136,3 +139,13 @@ function puerco_custom_excerpt_more( $output ) {
 	return $prefix . $output . puerco_continue_reading_link();
 }
 add_filter( 'the_excerpt', 'puerco_custom_excerpt_more', 1 );
+
+/**
+ * Filter comment form fields to add a wrapper div around the name/email/url fields.
+ */
+function puerco_comment_form_fields( $fields ){
+	$fields['author'] = '<div class="field-container">' . $fields['author'];
+	$fields['url'] = $fields['url'] . '</div><!-- /.field-container -->';
+	return $fields;
+}
+add_filter('comment_form_default_fields', 'puerco_comment_form_fields' );

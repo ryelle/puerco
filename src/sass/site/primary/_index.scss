@@ -6,13 +6,7 @@
 
 .entry-title a,
 .read-more {
-	color: white;
-	text-decoration: none;
-
-	&:hover, &:active, &:focus {
-		color: white;
-		text-decoration: underline;
-	}
+	@include white-link;
 }
 
 .read-more,

@@ -28,6 +28,11 @@ a {
 	}
 }
 
+.comments-closed .post-navigation {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
