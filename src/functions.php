@@ -67,6 +67,9 @@ function puerco_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Add support for the Nova Menu CPT from Jetpack
+	add_theme_support( 'nova_menu_item' );
 }
 endif; // puerco_setup
 add_action( 'after_setup_theme', 'puerco_setup' );
