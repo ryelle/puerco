@@ -34,6 +34,10 @@ function puerco_body_classes( $classes ) {
 		$classes[] = 'comments-closed';
 	}
 
+	if ( is_page_template( 'menu-template.php' ) ) {
+		$classes[] = 'menu-page';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'puerco_body_classes' );

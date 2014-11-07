@@ -105,6 +105,10 @@ function puerco_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( is_page_template( 'menu-template.php' ) ) {
+		wp_enqueue_script( 'puerco-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), '0.1.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'puerco_scripts' );
 

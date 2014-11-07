@@ -64,6 +64,19 @@ h4 {
 .entry-title {
 	margin-bottom: 10px;
 	@include font-size( 2.4 );
+
+	.menu-page & {
+		@include font-size( 3.6 );
+	}
+
+	.nova_menu_item & {
+		font-family: $font__main;
+		@include font-size( 1.8 );
+	}
+}
+
+.menu-group-title {
+	@include font-size( 2.4 );
 }
 
 .widget-title {
