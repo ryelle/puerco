@@ -66,10 +66,12 @@ h4 {
 	@include font-size( 2.4 );
 
 	.menu-page & {
+		margin-bottom: $size__spacing-small;
 		@include font-size( 3.6 );
 	}
 
 	.nova_menu_item & {
+		margin-bottom: 0;
 		font-family: $font__main;
 		@include font-size( 1.8 );
 	}

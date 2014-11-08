@@ -7,3 +7,41 @@
 		margin-bottom: 0;
 	}
 }
+
+.menu-group-header {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px $size__spacing;
+	cursor: pointer;
+
+	&:first-of-type {
+		margin-left: 0;
+	}
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&:hover,
+	&.selected {
+		color: $color__link;
+	}
+
+	&.selected:after {
+		position: absolute;
+		overflow: hidden;
+		left: calc( 50% - 5px ); // 9px wide total
+		bottom: -15px;
+		content: '\2666';
+		line-height: 1;
+		font-size: 18px;
+		height: 12px;
+	}
+}
+
+.menu-group-description {
+	margin-bottom: $size__spacing-small;
+	padding-bottom: $size__spacing-small;
+	@include font-size( 2.2 );
+	font-style: italic;
+	border-bottom: 1px solid $color__text-main;
+}
