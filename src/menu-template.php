@@ -30,12 +30,14 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
+			<div id="menu-container">
 			<?php $loop = new WP_Query( array( 'post_type' => 'nova_menu_item' ) ); ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 				<?php get_template_part( 'content', 'menu' ); ?>
 
 			<?php endwhile; ?>
+			</div><!-- #menu-container -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
