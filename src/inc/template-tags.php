@@ -144,6 +144,17 @@ function puerco_entry_footer() {
 endif;
 
 /**
+ * @todo
+ */
+function puerco_the_price( $before = '', $after = '' ){
+	global $post;
+	$price = get_post_meta( $post->ID, 'nova_price', true );
+	if ( $price ) {
+		echo $before . esc_html( $price ) . $after;
+	}
+}
+
+/**
  * Returns true if a blog has more than 1 category.
  *
  * @return bool
