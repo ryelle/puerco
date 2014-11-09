@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header clear">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php puerco_the_price( '<span class="menu-price">', '</span>' ); ?>
 	</header><!-- .entry-header -->

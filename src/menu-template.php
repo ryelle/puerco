@@ -31,12 +31,56 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			<div id="menu-container">
-			<?php $loop = new WP_Query( array( 'post_type' => 'nova_menu_item' ) ); ?>
+			<?php
+				global $nova;
+				$loop = new WP_Query( array( 'post_type' => Nova_Restaurant::MENU_ITEM_POST_TYPE ) );
+				$items = wp_list_pluck( $loop->get_posts(), 'ID' );
+				$terms = array();
+				foreach ($items as $item ) {
+					$term = $nova->get_menu_item_menu_leaf( $item );
+					if ( ! in_array( $term, $terms ) ){
+						$terms[] = $term;
+					}
+				}
+			?>
+
+			<header class="menu-header">
+			<?php
+				foreach ( $terms as $term ){
+					printf( '<h1 class="menu-group-title" data-id="%2$s">%1$s</h1>',
+						esc_html( $term->name ),
+						absint( $term->term_id )
+					);
+				}
+			?>
+			<div class="menu-description-container"><?php
+				foreach ( $terms as $term ){
+					printf( '<p class="menu-group-description" data-id="%2$s">%1$s</p>',
+						strip_tags( $term->description ),
+						absint( $term->term_id )
+					);
+				}
+			?></div>
+			</header>
+
+			<!-- Menu Items -->
+			<div class="menu-items-container">
+			<?php $last_term = false; ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<?php
+				$term = $nova->get_menu_item_menu_leaf( get_the_ID() );
+				if ( false === $last_term ) {
+					printf( '<section class="menu-items %s" data-id="%s">', esc_attr( $term->slug ), absint( $term->term_id ) );
+				} elseif ( $term != $last_term ) {
+					printf( '</section><section class="menu-items %s" data-id="%s">', esc_attr( $term->slug ), absint( $term->term_id ) );
+				} $last_term = $term;
+				?>
 
 				<?php get_template_part( 'content', 'menu' ); ?>
 
 			<?php endwhile; ?>
+			</section>
+			</div><!-- .menu-items-container -->
 			</div><!-- #menu-container -->
 
 		</main><!-- #main -->

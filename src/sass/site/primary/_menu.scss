@@ -8,7 +8,7 @@
 	}
 }
 
-.menu-group-header {
+.menu-group-title {
 	position: relative;
 	display: inline-block;
 	margin: 0 10px $size__spacing;
@@ -20,22 +20,6 @@
 	&:last-of-type {
 		margin-right: 0;
 	}
-
-	&:hover,
-	&.selected {
-		color: $color__link;
-	}
-
-	&.selected:after {
-		position: absolute;
-		overflow: hidden;
-		left: calc( 50% - 5px ); // 9px wide total
-		bottom: -15px;
-		content: '\2666';
-		line-height: 1;
-		font-size: 18px;
-		height: 12px;
-	}
 }
 
 .menu-group-description {
@@ -45,3 +29,44 @@
 	font-style: italic;
 	border-bottom: 1px solid $color__text-main;
 }
+
+.menu-items {
+	margin: 0 -17.5px;
+
+	.nova_menu_item {
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 17.5px;
+		width: 33%;
+		box-sizing: border-box;
+	}
+
+	.entry-title {
+		float: left;
+	}
+
+	.menu-price {
+		float: right;
+		font-weight: 900;
+	}
+}
+
+//  Animation
+.menu-description-container,
+.menu-items-container {
+	position: relative;
+	overflow: hidden;
+}
+.menu-group-description,
+.menu-items {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.1s linear;
+
+	&.selected {
+		opacity: 1;
+	}
+}
+
