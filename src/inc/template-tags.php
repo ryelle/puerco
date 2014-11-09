@@ -150,6 +150,9 @@ function puerco_the_price( $before = '', $after = '' ){
 	global $post;
 	$price = get_post_meta( $post->ID, 'nova_price', true );
 	if ( $price ) {
+		if ( is_numeric( $price ) ) {
+			$price = '$' . $price;
+		}
 		echo $before . esc_html( $price ) . $after;
 	}
 }
