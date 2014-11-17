@@ -34,7 +34,7 @@ function puerco_body_classes( $classes ) {
 		$classes[] = 'comments-closed';
 	}
 
-	if ( is_page_template( 'menu-template.php' ) ) {
+	if ( is_page_template( 'template-menu.php' ) ) {
 		$classes[] = 'menu-page';
 	}
 

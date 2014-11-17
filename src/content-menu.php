@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying menu content in menu-template.php
+ * The template used for displaying menu content in template-menu.php
  *
  * @package Puerco
  */
