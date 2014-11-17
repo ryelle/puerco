@@ -25,7 +25,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Primary Menu', 'puerco' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => -1 ) ); ?>
 		</nav><!-- #site-navigation -->
 
 		<div class="site-branding">
