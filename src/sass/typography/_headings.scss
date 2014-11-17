@@ -1,6 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__header;
 	font-weight: 900;
+	font-variant-ligatures: common-ligatures;
 }
 
 h1 {
@@ -55,6 +56,7 @@ h4 {
 	@include font-size( 3.0 );
 	font-style: italic;
 	text-align: center;
+	font-variant-ligatures: common-ligatures;
 }
 
 .page-header {
@@ -73,6 +75,9 @@ h4 {
 }
 
 .menu-group-title {
+	@include font-size( 2.4 );
+	font-variant-ligatures: common-ligatures;
+
 	&:hover,
 	&.selected {
 		color: $color__link;
@@ -88,10 +93,6 @@ h4 {
 		font-size: 18px;
 		height: 16px;
 	}
-}
-
-.menu-group-title {
-	@include font-size( 2.4 );
 }
 
 .widget-title {
