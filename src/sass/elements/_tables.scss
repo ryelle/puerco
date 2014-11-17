@@ -1,6 +1,15 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+
+	border-right: 1px solid rgba( $color__border-table, 0.5 );
+	border-bottom: 1px solid rgba( $color__border-table, 0.5 );
+}
+
+th, td {
+	padding: 5px;
+	border-left: 1px solid rgba( $color__border-table, 0.5 );
+	border-top: 1px solid rgba( $color__border-table, 0.5 );
 }
 
 th {
