@@ -35,6 +35,10 @@ function puerco_body_classes( $classes ) {
 	}
 
 	if ( is_page_template( 'template-menu.php' ) ) {
+		// Remove "page" from class list
+		if ( false !== ( $index = array_search( 'page', $classes ) ) ) {
+			unset( $classes[ $index ] );
+		}
 		$classes[] = 'menu-page';
 	}
 
