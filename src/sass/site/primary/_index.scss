@@ -18,3 +18,23 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+/*--------------------------------------------------------------
+   Shared
+--------------------------------------------------------------*/
+.single, .page {
+	.hentry {
+		margin-bottom: $size__spacing;
+		padding-bottom: $size__spacing * 1.5;
+		border-bottom: 1px solid $color__text-main;
+	}
+
+	.entry-title {
+		margin-bottom: $size__spacing-small;
+		@include font-size( 3.6 );
+	}
+
+	.entry-image {
+		margin-bottom: $size__spacing-small;
+	}
+}
