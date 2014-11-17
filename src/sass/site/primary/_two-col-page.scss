@@ -1,0 +1,11 @@
+
+.two-col-page {
+	.entry-content {
+		column-count: 2;
+		column-gap: $size__spacing;
+
+		@media screen and (max-width: 600px) {
+			column-count: 1;
+		}
+	}
+}

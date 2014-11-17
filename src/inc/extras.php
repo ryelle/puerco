@@ -42,6 +42,10 @@ function puerco_body_classes( $classes ) {
 		$classes[] = 'menu-page';
 	}
 
+	if ( is_page_template( 'template-two-col.php' ) ) {
+		$classes[] = 'two-col-page';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'puerco_body_classes' );
