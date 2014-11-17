@@ -8,3 +8,24 @@
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+#infinite-handle {
+	font-family: $font__header;
+	font-weight: 900;
+	text-align: center;
+
+	span {
+		display: block;
+		padding: 0 0 $size__spacing;
+		background-color: transparent;
+		@include font-size( 1.8 );
+	}
+}
+
+.infinite-loader {
+	padding: 0 0 ( $size__spacing + 28 );
+
+	.spinner {
+		left: 50% !important;
+	}
+}
