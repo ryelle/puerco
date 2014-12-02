@@ -11,9 +11,17 @@
 	select {
 		max-width: 100%;
 	}
+
+	> ul,
+	> ol {
+		margin-left: 0;
+	}
+
 }
 
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
+.widget_search {
+	.search-submit {
+		@include screen-reader-only;
+	}
 }
