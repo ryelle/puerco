@@ -62,12 +62,6 @@ function puerco_setup() {
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'puerco_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	// Add support for the Nova Menu CPT from Jetpack
 	add_theme_support( 'nova_menu_item' );
 }
@@ -111,11 +105,6 @@ function puerco_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'puerco_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
