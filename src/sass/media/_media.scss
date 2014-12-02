@@ -14,6 +14,37 @@ object {
 	max-width: 100%;
 }
 
+.wp-video,
+.wp-audio-shortcode {
+	margin-bottom: 1.5em;
+}
+
+.entry-content .wp-playlist {
+	font-size: 1em;
+	border: none;
+
+	.wp-playlist-caption,
+	.wp-playlist-item-title {
+		font-size: 1em;
+	}
+
+	.wp-playlist-current-item {
+		margin-bottom: $size__spacing-small/2;
+	}
+
+	.wp-playlist-item {
+		padding: 8px 3px 5px;
+	}
+
+	.wp-playlist-item-length {
+		top: 8px;
+	}
+}
+
+.entry-content .wp-playlist-dark .wp-playlist-playing * {
+	color: $color__link;
+}
+
 /*--------------------------------------------------------------
 12.1 Captions
 --------------------------------------------------------------*/

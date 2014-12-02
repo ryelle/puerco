@@ -161,3 +161,19 @@ function puerco_comment_form_fields( $fields ){
 	return $fields;
 }
 add_filter('comment_form_default_fields', 'puerco_comment_form_fields' );
+
+/**
+ * Force the default playlist style to be "dark" if the shortcode does not explicitly define a style.
+ *
+ * @param  array  $out   The output array of shortcode attributes.
+ * @param  array  $pairs The supported attributes and their defaults.
+ * @param  array  $atts  The user defined shortcode attributes.
+ * @return  array  The output array of shortcode attributes, updated.
+ */
+function puerco_shortcode_atts_playlist( $out, $pairs, $atts ) {
+	if ( ! array_key_exists( 'style', $atts) ) {
+		$out['style'] = 'dark';
+	}
+	return $out;
+}
+add_filter( 'shortcode_atts_playlist', 'puerco_shortcode_atts_playlist', 10, 3 );
