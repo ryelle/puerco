@@ -62,6 +62,8 @@ function puerco_setup() {
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
+	add_editor_style( array( 'editor-style.css', puerco_fonts_url() ) );
+
 	// Add support for the Nova Menu CPT from Jetpack
 	add_theme_support( 'nova_menu_item' );
 }

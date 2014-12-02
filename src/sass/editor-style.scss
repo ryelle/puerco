@@ -1,0 +1,31 @@
+/*
+Puerco Editor Styles
+--------------------------------------------------------------*/
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+@import "typography/typography";
+@import "elements/elements";
+@import "modules/alignments";
+@import "media/media";
+
+html {
+	font-size: 62.5%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__background-body;
+}
+
+ins {
+	background-color: #fff9c0;
+}
+
+pre {
+	background-color: #eee;
+}
