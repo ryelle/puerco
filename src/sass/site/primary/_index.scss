@@ -22,7 +22,7 @@
 /*--------------------------------------------------------------
    Shared
 --------------------------------------------------------------*/
-.single, .page {
+body.single, body.page {
 	.hentry {
 		margin-bottom: $size__spacing;
 		padding-bottom: $size__spacing * 1.5;
@@ -37,4 +37,8 @@
 	.entry-image {
 		margin-bottom: $size__spacing-small;
 	}
+}
+
+body.page.comments-closed .hentry {
+	border-bottom: none;
 }
