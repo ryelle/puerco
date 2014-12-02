@@ -107,6 +107,68 @@ function puerco_scripts() {
 add_action( 'wp_enqueue_scripts', 'puerco_scripts' );
 
 /**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * The use of Vollkorn and Playfair Display by default is localized.
+ * For languages that use characters not supported by either font,
+ * the font can be disabled.
+ *
+ * @since Puerco 1.0
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function puerco_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Vollkorn, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$vollkorn = _x( 'on', 'Vollkorn font: on or off', 'puerco' );
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Playfair Display, translate this to 'off'. Do not
+	 * translate into your own language.
+	 */
+	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'puerco' );
+
+	if ( 'off' !== $vollkorn || 'off' !== $playfair_display ) {
+		$font_families = array();
+
+		if ( 'off' !== $vollkorn )
+			$font_families[] = urlencode( 'Vollkorn:400italic,700italic,400,700' );
+
+		if ( 'off' !== $playfair_display )
+			$font_families[] = urlencode( 'Playfair Display:900,900italic' );
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$fonts_url = add_query_arg( 'family', implode( '|', $font_families ), "$protocol://fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+/**
+ * Loads our special font CSS file.
+ *
+ * To disable in a child theme, use wp_dequeue_style()
+ * function mytheme_dequeue_fonts() {
+ *     wp_dequeue_style( 'puerco-fonts' );
+ * }
+ * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+ *
+ * @since Puerco 1.0
+ *
+ * @return void
+ */
+function puerco_fonts() {
+	$fonts_url = puerco_fonts_url();
+	if ( ! empty( $fonts_url ) )
+		wp_enqueue_style( 'puerco-fonts', esc_url_raw( $fonts_url ), array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'puerco_fonts' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
