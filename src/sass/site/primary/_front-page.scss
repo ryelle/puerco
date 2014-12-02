@@ -9,6 +9,11 @@
 		@include font-size( 2.4 );
 	}
 
+	.hentry {
+		border-bottom: none;
+	}
+
+	/* If the entry element has a style, the background's been set. */
 	.hentry[style] {
 		position: relative;
 		display: table;
