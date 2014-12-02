@@ -72,3 +72,10 @@ label {
 :-ms-input-placeholder {
 	color: $color__text-placeholder;
 }
+
+.post-password-form {
+	input[type="password"] {
+		margin: 3px 0 13px;
+		width: 100%;
+	}
+}
