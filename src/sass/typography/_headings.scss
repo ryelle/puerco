@@ -84,7 +84,7 @@ h4 {
 		color: $color__link;
 	}
 
-	&.selected:after {
+	&:after {
 		position: absolute;
 		overflow: hidden;
 		left: calc( 50% - 5px ); // 9px wide total
