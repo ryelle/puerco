@@ -30,7 +30,7 @@ function puerco_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-	if ( ! comments_open() && ! get_comments_number() ) {
+	if ( is_singular() && ! comments_open() && ! get_comments_number() ) {
 		$classes[] = 'comments-closed';
 	}
 
