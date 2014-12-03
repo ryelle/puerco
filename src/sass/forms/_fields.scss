@@ -72,17 +72,3 @@ label {
 :-ms-input-placeholder {
 	color: $color__text-placeholder;
 }
-
-.post-password-form {
-	input[type="password"] {
-		margin: 3px 0 13px;
-		width: 100%;
-	}
-}
-
-.widget .search-form {
-	.search-field {
-		width: 100%;
-		box-sizing: border-box;
-	}
-}

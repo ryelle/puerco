@@ -18,10 +18,3 @@
 	}
 
 }
-
-/* Search widget */
-.widget_search {
-	.search-submit {
-		@include screen-reader-only;
-	}
-}

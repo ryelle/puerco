@@ -10,3 +10,22 @@ textarea {
 @import "buttons";
 
 @import "fields";
+
+.post-password-form {
+	input[type="password"] {
+		margin: 3px 0 13px;
+		width: 100%;
+	}
+}
+
+.search-form {
+	.search-field {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.search-submit {
+		@include screen-reader-only;
+	}
+}
+
