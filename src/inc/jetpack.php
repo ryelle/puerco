@@ -12,11 +12,17 @@
  */
 function puerco_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'footer'    => 'page',
+		'container'       => 'main',
+		'footer'          => 'page',
+		'footer_widgets'  => 'sidebar-1',
+		'footer_callback' => 'puerco_infinite_footer',
 	) );
 }
 add_action( 'after_setup_theme', 'puerco_jetpack_setup' );
+
+function puerco_infinite_footer(){
+	get_footer( 'infinite' );
+}
 
 function puerco_nova_setup(){
 	// Just grab the Nova_Restaurant instance, don't set up the variables.

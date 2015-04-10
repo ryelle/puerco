@@ -9,7 +9,24 @@
 	display: block;
 }
 
-#infinite-handle {
+.infinite-scroll #infinite-footer {
+	.container {
+		padding: 6px 20px 3px;
+		border-top: none;
+		background-color: rgba( $color__background-body, 0.9 );
+	}
+	.blog-info a,
+	.blog-credits,
+	.blog-credits a {
+		@include font-size( 1.6 );
+		color: $color__text-footer;
+	}
+	.blog-credits {
+		font-style: italic;
+	}
+}
+
+.infinite-scroll #infinite-handle {
 	font-family: $font__header;
 	font-weight: 900;
 	text-align: center;
