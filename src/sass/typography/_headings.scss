@@ -108,3 +108,9 @@ h4 {
 	margin-bottom: $size__spacing;
 	@include font-size( 3.6 );
 }
+
+.entry-content .sharedaddy h3.sd-title { /* hooray specificity */
+	font-family: $font__main;
+	font-weight: normal;
+	@include font-size( 1.4 );
+}
