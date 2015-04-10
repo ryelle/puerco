@@ -21,7 +21,8 @@ module.exports = function(grunt) {
 					'sass',
 					'README.md',
 					'layouts',
-					'.sass-cache'
+					'.sass-cache',
+					'*.css.map'
 				]
 			}
 		},
@@ -52,7 +53,6 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					noCache: false,
-					sourcemap: true
 				},
 				expand: true,
 				cwd: SOURCE_DIR + 'sass/',
@@ -63,7 +63,6 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					noCache: true,
-					sourcemap: false
 				},
 				expand: true,
 				cwd: SOURCE_DIR + 'sass/',
