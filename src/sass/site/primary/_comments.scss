@@ -91,6 +91,24 @@ article.comment-body {
 	padding-left: 80px;
 }
 
+@media screen and (max-width: 500px) {
+	.comment-content {
+		margin-left: 0;
+	}
+
+	.comment-meta {
+		float: none;
+		margin-bottom: 20px;
+		padding-right: 0;
+		width: 100%;
+	}
+
+	.reply {
+		position: static;
+		left: 0;
+		margin-top: 1em;
+	}
+}
 
 /*--------------------------------------------------------------
   Comment Reply Form
@@ -142,5 +160,21 @@ article.comment-body {
 
 	input {
 		padding: 15px 40px 10px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.field-container {
+		float: none;
+		margin: 0 0 0 0;
+	}
+	.comment-form-comment {
+		float: none;
+		padding-left: 0;
+		width: 100%;
+
+		textarea {
+			height: auto;
+		}
 	}
 }
