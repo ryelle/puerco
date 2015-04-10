@@ -36,3 +36,23 @@
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.single {
+		.entry-container,
+		.entry-meta {
+			float: none;
+			margin: 0;
+			width: 100%;
+		}
+
+		.entry-content {
+			margin: 0;
+		}
+
+		.entry-meta {
+			margin-top: $size__spacing-small;
+			padding-top: $size__spacing-small;
+			border-top: 1px solid $color__text-main;
+		}
+	}
+}

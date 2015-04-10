@@ -42,3 +42,11 @@ body.single, body.page {
 body.page.comments-closed .hentry {
 	border-bottom: none;
 }
+
+@media screen and (max-width: 768px) {
+	body.single, body.page {
+		.hentry {
+			padding-bottom: 0;
+		}
+	}
+}

@@ -52,7 +52,20 @@
 		display: block;
 	}
 
+	.menu-toggle {
+		margin: 0 auto;
+		transition-property: color;
+
+		.toggled & {
+			margin-bottom: $size__spacing-small;
+		}
+	}
+
 	.main-navigation ul {
 		display: none;
+	}
+
+	.main-navigation li {
+		display: block;
 	}
 }
