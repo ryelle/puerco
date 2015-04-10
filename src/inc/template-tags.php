@@ -144,7 +144,9 @@ function puerco_entry_footer() {
 endif;
 
 /**
- * @todo
+ * Display the menu item's price
+ * @param  string  $before  Optional. Content to prepend to the price.
+ * @param  string  $after   Optional. Content to append to the price.
  */
 function puerco_the_price( $before = '', $after = '' ){
 	global $post;
