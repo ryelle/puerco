@@ -42,6 +42,11 @@
 		padding: 0 17.5px;
 		width: 33%;
 		box-sizing: border-box;
+
+		&:nth-of-type(3n+2),
+		&:nth-of-type(3n+3) {
+			margin-left: -4px;
+		}
 	}
 
 	.entry-title {
@@ -85,5 +90,34 @@
 	&.selected:after {
 		opacity: 1;
 		transform: none;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.menu-items {
+		.nova_menu_item {
+			width: 50%;
+
+			&:nth-of-type(3n+2),
+			&:nth-of-type(3n+3) {
+				margin-left: 0;
+			}
+
+			&:nth-of-type(2n) {
+				margin-left: -4px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.menu-items {
+		.nova_menu_item {
+			width: 100%;
+
+			&:nth-of-type(n) {
+				margin-left: 0;
+			}
+		}
 	}
 }
