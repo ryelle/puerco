@@ -47,3 +47,23 @@ a {
 	text-align: right;
 	width: 50%;
 }
+
+@media screen and (max-width: 400px) {
+	.comment-navigation .nav-previous,
+	.paging-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: none;
+		width: 100%;
+	}
+
+	.comment-navigation .nav-next,
+	.paging-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: none;
+		width: 100%;
+	}
+
+	.nav-previous + .nav-next {
+		margin-top: 50px;
+	}
+}
