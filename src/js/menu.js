@@ -7,7 +7,7 @@
 
 	var $div,
 		container    = document.getElementById('menu-container'),
-		sections     = container.querySelectorAll('.menu-items'),
+		sections     = container.querySelectorAll( '.menu-items' ),
 		headers      = container.querySelectorAll( '.menu-group-title' ),
 		descriptions = container.querySelectorAll( '.menu-group-description' ),
 		functions    = {};
@@ -19,8 +19,12 @@
 		$( ".selected" ).removeClass('selected');
 		$( headers ).filter( "[data-id='" + index + "']" ).addClass('selected')
 
-		description.addClass('selected');
-		$(".menu-description-container").height( description.height() + 61 );
+		if ( description.length ) {
+			description.addClass('selected');
+			$(".menu-description-container").height( description.height() + 31 );
+		} else {
+			$(".menu-description-container").height( 0 );
+		}
 
 		section.addClass('selected');
 		$(".menu-items-container").height( section.height() + 30 );

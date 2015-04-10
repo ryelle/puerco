@@ -8,6 +8,11 @@
 	}
 }
 
+.menu-header {
+	margin-bottom: $size__spacing-small;
+	border-bottom: 1px solid $color__text-main;
+}
+
 .menu-group-title {
 	position: relative;
 	display: inline-block;
@@ -22,12 +27,10 @@
 	}
 }
 
-.menu-group-description {
-	margin-bottom: $size__spacing-small;
-	padding-bottom: $size__spacing-small;
+.menu-group-description:last-of-type {
+	margin-bottom: 0;
 	@include font-size( 2.2 );
 	font-style: italic;
-	border-bottom: 1px solid $color__text-main;
 }
 
 .menu-items {

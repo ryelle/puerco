@@ -52,15 +52,20 @@ get_header(); ?>
 						absint( $term->term_id )
 					);
 				}
-			?>
-			<div class="menu-description-container"><?php
+				$description_text = '';
 				foreach ( $terms as $term ){
-					printf( '<p class="menu-group-description" data-id="%2$s">%1$s</p>',
+					if ( empty( $term->description ) ) {
+						continue;
+					}
+					$description_text .= sprintf( '<p class="menu-group-description" data-id="%2$s">%1$s</p>',
 						strip_tags( $term->description ),
 						absint( $term->term_id )
 					);
 				}
-			?></div>
+				if ( $description_text ) {
+					printf( '<div class="menu-description-container">%s</div>', $description_text );
+				}
+			?>
 			</header>
 
 			<!-- Menu Items -->
