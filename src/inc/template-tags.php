@@ -158,6 +158,30 @@ function puerco_the_price( $before = '', $after = '' ){
 }
 
 /**
+ * Add classes to the footer widget area based on number of active widgets.
+ * @param  array|string  $classes  One or more classes to add to the class list
+ */
+function puerco_widget_class( $class = array() ) {
+	$classes = array( 'widget-area' );
+
+	// Default is 3 colums, but if we have 1 or 2, let's flex the spacing.
+	$widgets = wp_get_sidebars_widgets();
+	if ( isset( $widgets['sidebar-1'] ) ) {
+		$count = count( $widgets['sidebar-1'] );
+		if ( $count == 1 ){
+			$classes[] = 'one-widget';
+		} elseif ( $count == 2 ) {
+			$classes[] = 'two-widgets';
+		}
+	}
+
+	$classes = array_merge( $classes, (array) $class );
+	$classes = apply_filters( 'puerco_widget_class', $classes );
+
+	printf( ' class="%s"', join( ' ', $classes ) );
+}
+
+/**
  * Returns true if a blog has more than 1 category.
  *
  * @return bool
