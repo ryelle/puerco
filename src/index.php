@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<?php if ( is_home() && $blog ): ?>
 			<header class="page-header">
-				<h1 class="page-title"><?php echo get_the_title( $blog ); ?></h1>
+				<h2 class="page-title"><?php echo get_the_title( $blog ); ?></h2>
 			</header>
 			<?php endif; ?>
 
