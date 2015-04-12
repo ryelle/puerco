@@ -15,6 +15,6 @@
 
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
-		<?php puerco_continue_reading_link(); ?>
+		<?php puerco_entry_footer(); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
