@@ -38,6 +38,10 @@ a {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+
+	a:before {
+		content: '\2190 ';
+	}
 }
 
 .comment-navigation .nav-next,
@@ -46,6 +50,10 @@ a {
 	float: right;
 	text-align: right;
 	width: 50%;
+
+	a:after {
+		content: ' \2192';
+	}
 }
 
 @media screen and (max-width: 400px) {
